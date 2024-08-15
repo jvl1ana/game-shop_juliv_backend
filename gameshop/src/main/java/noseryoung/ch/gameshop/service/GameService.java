@@ -14,4 +14,10 @@ public interface GameService {
     List<GameDTO> getAllGamesStatusConsole(int gameStatus, int gameConsole);
 
     List<GameDTO> getAllGamesStatusGenreConsole(int gameStatus, int gameGenre, int gameConsole);
+
+    GameDTO createGame(GameDTO gameDTO);
+
+    GameDTO updateGame(int id, GameDTO gameDTO);
+
+    void deleteGame(int id);
 }

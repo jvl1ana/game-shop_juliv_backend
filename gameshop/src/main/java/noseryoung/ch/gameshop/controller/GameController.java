@@ -49,5 +49,21 @@ public class GameController {
         return new ResponseEntity<>(categories, HttpStatus.OK);
     }
 
+    @PostMapping
+    public ResponseEntity<GameDTO> createGame(@RequestBody GameDTO gameDTO) {
+        GameDTO createdGame = gameService.createGame(gameDTO);
+        return new ResponseEntity<>(createdGame, HttpStatus.CREATED);
+    }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<GameDTO> updateGame(@PathVariable int id, @RequestBody GameDTO gameDTO) {
+        GameDTO updatedGame = gameService.updateGame(id, gameDTO);
+        return new ResponseEntity<>(updatedGame, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteGame(@PathVariable int id) {
+        gameService.deleteGame(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }
