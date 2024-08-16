@@ -21,6 +21,8 @@ public class ConsoleController {
     public ResponseEntity<List<ConsoleDTO>> getAllCategories() {
         List<ConsoleDTO> consoles = consoleService.getAllConsole();
         return new ResponseEntity<>(consoles, HttpStatus.OK);
+
+
     }
 
     @PostMapping
