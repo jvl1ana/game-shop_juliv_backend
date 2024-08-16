@@ -4,7 +4,7 @@ import noseryoung.ch.gameshop.dto.StatusDTO;
 import noseryoung.ch.gameshop.entity.Status;
 
 public class StatusMapper {
-    public static StatusDTO mapTostatusDTO(Status status){
+    public static StatusDTO mapToStatusDTO(Status status){
         return new StatusDTO(
                 status.getStatus_id(),
                 status.getName()

@@ -21,32 +21,32 @@ public class GameController {
 
     @GetMapping
     public ResponseEntity<List<GameDTO>> getAllGames() {
-        List<GameDTO> categories = gameService.getAllGames();
-        return new ResponseEntity<>(categories, HttpStatus.OK);
+        List<GameDTO> games = gameService.getAllGames();
+        return new ResponseEntity<>(games, HttpStatus.OK);
     }
 
     @GetMapping("/status/{statusId}")
     public ResponseEntity<List<GameDTO>> getAllGamesStatus(@PathVariable int statusId) {
-        List<GameDTO> categories = gameService.getAllGamesStatus(statusId);
-        return new ResponseEntity<>(categories, HttpStatus.OK);
+        List<GameDTO> games = gameService.getAllGamesStatus(statusId);
+        return new ResponseEntity<>(games, HttpStatus.OK);
     }
 
     @GetMapping("/status/{statusId}/console/{consoleId}")
     public ResponseEntity<List<GameDTO>> getAllGamesStatusConsole(@PathVariable int statusId, @PathVariable int consoleId) {
-        List<GameDTO> categories = gameService.getAllGamesStatusConsole(statusId, consoleId);
-        return new ResponseEntity<>(categories, HttpStatus.OK);
+        List<GameDTO> games = gameService.getAllGamesStatusConsole(statusId, consoleId);
+        return new ResponseEntity<>(games, HttpStatus.OK);
     }
 
     @GetMapping("/status/{statusId}/genre/{genreId}/console/{consoleId}")
     public ResponseEntity<List<GameDTO>> getAllGamesStatusGenreConsole(@PathVariable int statusId, @PathVariable int genreId, @PathVariable int consoleId) {
-        List<GameDTO> categories = gameService.getAllGamesStatusGenreConsole(statusId, genreId, consoleId);
-        return new ResponseEntity<>(categories, HttpStatus.OK);
+        List<GameDTO> games = gameService.getAllGamesStatusGenreConsole(statusId, genreId, consoleId);
+        return new ResponseEntity<>(games, HttpStatus.OK);
     }
 
     @GetMapping("/status/{statusId}/genre/{genreId}")
     public ResponseEntity<List<GameDTO>> getAllGamesStatusGenre(@PathVariable int statusId, @PathVariable int genreId) {
-        List<GameDTO> categories = gameService.getAllGamesStatusGenre(statusId, genreId);
-        return new ResponseEntity<>(categories, HttpStatus.OK);
+        List<GameDTO> games = gameService.getAllGamesStatusGenre(statusId, genreId);
+        return new ResponseEntity<>(games, HttpStatus.OK);
     }
 
     @PostMapping
