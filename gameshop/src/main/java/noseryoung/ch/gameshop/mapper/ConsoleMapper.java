@@ -12,7 +12,7 @@ public class ConsoleMapper {
         );
     }
 
-    public static Console mapToconsole (ConsoleDTO consoleDTO){
+    public static Console mapToConsole (ConsoleDTO consoleDTO){
         return new Console(
                 consoleDTO.getConsole_id(),
                 consoleDTO.getName()

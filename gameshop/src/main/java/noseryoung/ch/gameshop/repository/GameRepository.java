@@ -9,25 +9,25 @@ import java.util.List;
 
 public interface GameRepository extends JpaRepository<Game, Integer> {
 
-    @Query("SELECT g FROM Game g WHERE g.status = :gameStatus ")
+    @Query("SELECT g FROM Game g WHERE g.status.status_id = :gameStatus ")
     List<Game> allGamesStatus(
             @Param("gameStatus") int gameStatus
     );
 
-    @Query("SELECT g FROM Game g WHERE g.status = :gameStatus AND g.genre = :gameGenre")
+    @Query("SELECT g FROM Game g WHERE g.status.status_id = :gameStatus AND g.genre.genre_id = :gameGenre")
     List<Game> allGamesStatusGenre(
             @Param("gameStatus") int gameStatus,
             @Param("gameGenre") int gameGenre
     );
 
-    @Query("SELECT g FROM Game g WHERE g.status = :gameStatus AND g.genre = :gameGenre AND g.console = :gameConsole")
+    @Query("SELECT g FROM Game g WHERE g.status.status_id = :gameStatus AND g.genre.genre_id = :gameGenre AND g.console.console_id = :gameConsole")
     List<Game> allGamesStatusGenreConsole(
             @Param("gameStatus") int gameStatus,
             @Param("gameGenre") int gameGenre,
             @Param("gameConsole") int gameConsole
     );
 
-    @Query("SELECT g FROM Game g WHERE g.status = :gameStatus AND g.console = :gameConsole")
+    @Query("SELECT g FROM Game g WHERE g.status.status_id = :gameStatus AND g.console.console_id = :gameConsole")
     List<Game> allGamesStatusConsole(
             @Param("gameStatus") int gameStatus,
             @Param("gameConsole") int gameConsole
